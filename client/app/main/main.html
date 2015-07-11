@@ -1,22 +1,23 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>Blockchain Melody</h1>
-  </div>
-</header>
+<!--<header class="hero-unit" id="banner">-->
+  <!--<div class="container">-->
+    <!--<h1>Kandle Reader</h1>-->
+  <!--</div>-->
+<!--</header>-->
 
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Books:</h1>
+      <h1 class="page-header">Your Library</h1>
       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="asset in assets">
         <li>
-        {{asset.definition_reference.name_short}}
-        <a href="/read">
+        <a ng-href="/read/{{asset.asset_id}}/{{asset.definition_reference.name}}">
           <div class="asset-container">
-            <img class="asset-image" ng-src="{{asset.definition_reference.image_url}}" /> 
-            <p>{{asset.definition_reference.name}}</p>
+            <img class="asset-image" ng-src="{{asset.definition_reference.image_url}}" />
+            <p><strong>{{asset.definition_reference.name}}</strong>
+              <br/>
+              {{asset.definition_reference.description}}</p>
           </div>
         </a></li>
       </ul>
