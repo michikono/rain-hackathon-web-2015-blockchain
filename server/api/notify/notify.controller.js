@@ -16,9 +16,9 @@ var chain = new Chain.Client({
 exports.index = function (req, res) {
   if(req.body && req.body.payload) {
     var payload = req.body.payload
-    if(payload.inputs[0] && payload.inputs[0].bucket_id) {
-
-    }
+    //if(payload.inputs[0] && payload.inputs[0].bucket_id) {
+    //
+    //}
   }
   res.send(req.body)
 };
