@@ -389,7 +389,7 @@ module.exports = function (grunt) {
       },
       heroku: {
         options: {
-          remote: 'https://git.heroku.com/blockchain-melody.git',
+          remote: 'heroku',
           branch: 'master'
         }
       },
