@@ -14,7 +14,6 @@ chain.keyStore.add(new Chain.Xprv(
 ));
 
 exports.index = function (req, res) {
-  console.log(req.body)
   chain.transferAsset(
     [{
       asset_id: req.param('assetId'), // "AXWjzBmdFgB9YaEjwRd8tw5WZoDwdiAqnZ",

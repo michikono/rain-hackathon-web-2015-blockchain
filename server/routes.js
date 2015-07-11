@@ -6,13 +6,38 @@
 
 var errors = require('./components/errors');
 
-module.exports = function(app) {
+module.exports = function (app) {
 
   // Insert routes below
   app.use('/api/things', require('./api/thing'));
 
   /**
+   * GET      /api/assets/:assetId
+   *
+   * parameters:
+   *          - assetId - asset to lookup
+   *
+   * Sample response:
+   *
+   * {
+   *   "asset_id": "AXWjzBmdFgB9YaEjwRd8tw5WZoDwdiAqnZ",
+   *   "definition_mutable": true,
+   *   "definition_base64": "ewogICJhc3NldF9pZHMiOiBbCiAgICAiQVhXanpCbWRGZ0I5WWFFandSZDh0dzVXWm9Ed2RpQXFuWiIKICBdLAogICJuYW1lIjogIk1pY2hpIGlzIGNvb2wiLAogICJzaG9ydC1uYW1lIjogIm1pY2hpIgp9",
+   *   "definition_reference": {
+   *     "asset_ids": ["AXWjzBmdFgB9YaEjwRd8tw5WZoDwdiAqnZ"],
+   *     "name": "Michi is cool",
+   *     "short-name": "michi"
+   *   },
+   *   "definition_hash": "52b41466a6d86de44aa218ad69c928c793456d7c"
+   *  }
+   */
+  app.use('/api/assets', require('./api/assets'));
+
+  /**
    * GET      /api/buckets/:bucketId/balances
+   *
+   * parameters:
+   *          - bucketId - bucket you want to lookup to retrieve all assets inside it
    *
    * Sample response:
    *
@@ -48,14 +73,14 @@ module.exports = function(app) {
   app.use('/notify', require('./api/notify'));
 
   app.use('/api/text', require('./api/text'));
-  
+
   // All undefined asset or api routes should return a 404
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')
-   .get(errors[404]);
+    .get(errors[404]);
 
   // All other routes should redirect to the index.html
   app.route('/*')
-    .get(function(req, res) {
+    .get(function (req, res) {
       res.sendfile(app.get('appPath') + '/index.html');
     });
 };

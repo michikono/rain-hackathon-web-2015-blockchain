@@ -6,7 +6,7 @@
 'use strict';
 
 var _ = require('lodash');
-var Chain = require('../../../lib/index');
+var Chain = require('../../lib/index');
 
 var chain = new Chain.Client({
   keyId: "27f7fd9312eef78ec54dfbb92324e471",
