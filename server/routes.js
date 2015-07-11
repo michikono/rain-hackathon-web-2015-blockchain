@@ -9,7 +9,7 @@ var errors = require('./components/errors');
 module.exports = function (app) {
 
   // Insert routes below
-  app.use('/api/things', require('./api/thing'));
+  // app.use('/api/things', require('./api/thing'));
 
   /**
    * GET      /api/assets/:assetId/issue/:bucketId

@@ -18,7 +18,7 @@ angular.module('blockchainedMelodyApp')
 
 	    console.log('here')
     
-    }, 1500);
+    }, 5000);
 
 
 
