@@ -10,7 +10,9 @@ angular.module('blockchainedMelodyApp')
         _.forEach(asset_links, function (info) {
           if (!cache[info.asset_id]) {
             $http.get('/api/assets/' + info.asset_id).success(function (asset) {
-              $scope.assets[info.asset_id] = asset;
+              if (asset.definition_reference.name_short === "BOOK") {
+                $scope.assets[info.asset_id] = asset;
+              }
             })
           } else {
             $scope.assets[info.asset_id] = cache[info.asset_id];
