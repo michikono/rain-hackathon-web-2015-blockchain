@@ -4,6 +4,6 @@ var express = require('express');
 
 var router = express.Router();
 
-router.get('/', require('./thing.controller').index);
+router.post('/transfer', require('./transfers.controller.js').index);
 
 module.exports = router;

@@ -1,0 +1,68 @@
+{
+  "name": "chain-wallets-node",
+  "version": "1.0.15",
+  "description": "The Official Node.js SDK for Chain's Wallet API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'Error: no test specified' && exit 1",
+    "lint": "jshint *.js test/*.js",
+    "fmt": "js-beautify -rjan -m2 --good-stuff *.js test/*.js",
+    "posttest": "npm run lint && npm run fmt",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:chain-engineering/chain-wallets-node.git"
+  },
+  "keywords": [
+    "chain",
+    "bitcoin"
+  ],
+  "author": "Chain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chain-engineering/chain-wallets-node/issues"
+  },
+  "homepage": "https://github.com/chain-engineering/chain-wallets-node",
+  "dependencies": {
+    "bitcoinjs-lib": "1.2.0",
+    "request": "2.36.0",
+    "protobufjs": "erykwalder/ProtoBuf.js#build",
+    "asn1.js": "1.0.5"
+  },
+  "devDependencies": {
+    "jshint": "latest",
+    "js-beautify": "latest",
+    "mocha": "~2.2.0",
+    "nock": "~1.6.0"
+  },
+  "jshintConfig": {
+    "asi": true,
+    "node": true,
+    "mocha": true,
+    "curly": true,
+    "eqeqeq": true,
+    "forin": true,
+    "freeze": true,
+    "futurehostile": true,
+    "latedef": "nofunc",
+    "maxcomplexity": 10,
+    "maxdepth": 4,
+    "nocomma": true,
+    "shadow": true,
+    "singleGroups": true,
+    "undef": true,
+    "unused": "vars",
+    "loopfunc": true
+  },
+  "files": [
+    "index.js",
+    "http-utility.js",
+    "signer.js",
+    "payments.js",
+    "payment-request.js",
+    "chain.pem",
+    "paymentrequest.proto",
+    "ca-bundle.crt"
+  ]
+}

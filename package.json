@@ -15,7 +15,11 @@
     "lodash": "~2.4.1",
     "ejs": "~0.8.4",
     "composable-middleware": "^0.3.0",
-    "connect-mongo": "^0.4.1"
+    "connect-mongo": "^0.4.1",
+    "bitcoinjs-lib": "1.2.0",
+    "request": "2.36.0",
+    "protobufjs": "erykwalder/ProtoBuf.js#build",
+    "asn1.js": "1.0.5"
   },
   "devDependencies": {
     "grunt": "~0.4.4",
