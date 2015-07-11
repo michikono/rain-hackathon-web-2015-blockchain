@@ -13,8 +13,12 @@ var chain = new Chain.Client({
   keySecret: "b06c1485c198c748d72920678e33e32b"
 });
 
+chain.keyStore.add(new Chain.Xprv(
+  "xprv9s21ZrQH143K3fdfzBVQrgiFMr3Y4QDWr5PwXAURN87aC5GWdzhoH3MiQyYUMqm8PnGSwpxfSiToeLgssb5F4iyeMApGFLS6oXogGbwWWiv",
+  true
+));
+
 exports.index = function (req, res) {
-  console.log('issuing');
   chain.issueAsset(req.params.assetId,
     [
       {
@@ -25,7 +29,6 @@ exports.index = function (req, res) {
     function (err, response) {
       res.setHeader('Content-Type', 'application/json');
       if (err) {
-        console.log(err.resp)
         res.json(err.resp.body);
       } else {
         res.json(response);
