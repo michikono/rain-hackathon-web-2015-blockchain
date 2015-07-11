@@ -4,6 +4,6 @@ var express = require('express');
 
 var router = express.Router();
 
-router.get('/', require('./thing.controller').index);
+router.post('/', require('./notify.controller.js').index);
 
 module.exports = router;
