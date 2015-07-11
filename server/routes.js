@@ -8,9 +8,6 @@ var errors = require('./components/errors');
 
 module.exports = function (app) {
 
-  // Insert routes below
-  // app.use('/api/things', require('./api/thing'));
-
   /**
    * GET      /api/assets/:assetId/issue/:bucketId
    *
@@ -88,7 +85,9 @@ module.exports = function (app) {
 
   app.use('/api/text', require('./api/text'));
 
-  app.use('/images', require('express').static('server/assets'));
+  app.use('/images', require('express').static('server/assets/images'));
+  app.use('/stylesheets', require('express').static('server/assets/stylesheets'));
+  app.use('/fonts', require('express').static('server/assets/fonts'));
 
   // All undefined asset or api routes should return a 404
   app.route('/:url(api|auth|components|app|bower_components|assets|images)/*')
