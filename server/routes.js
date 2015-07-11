@@ -88,7 +88,8 @@ module.exports = function (app) {
 
   app.use('/api/text', require('./api/text'));
 
-  app.use('/images', require('express').static('server/assets'));
+  app.use('/images', require('express').static('server/assets/images'));
+  app.use('/stylesheets', require('express').static('server/assets/stylesheets'));
 
   // All undefined asset or api routes should return a 404
   app.route('/:url(api|auth|components|app|bower_components|assets|images)/*')
