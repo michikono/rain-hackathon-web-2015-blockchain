@@ -12,7 +12,7 @@ module.exports = function(app) {
   app.use('/api/things', require('./api/thing'));
 
   /**
-   * GET      /api/buckets/:bucketId/transfers
+   * GET      /api/buckets/:bucketId/balances
    *
    * Sample response:
    *
