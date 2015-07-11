@@ -13,6 +13,7 @@ var config = require('./config/environment');
 var app = express();
 var server = require('http').createServer(app);
 require('./config/express')(app);
+app.use(require('body-parser').urlencoded({ extended: false }));
 require('./routes')(app);
 
 // Start server

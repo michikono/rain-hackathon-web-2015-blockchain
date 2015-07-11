@@ -1,10 +1,6 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
  * GET     /transfers              ->  index
- * POST    /transfers              ->  create
- * GET     /transfers/:id          ->  show
- * PUT     /transfers/:id          ->  update
- * DELETE  /transfers/:id          ->  destroy
  */
 
 'use strict';
@@ -17,18 +13,7 @@ var chain = new Chain.Client({
   keySecret: "b06c1485c198c748d72920678e33e32b"
 });
 
-chain.keyStore.add(new Chain.Xprv(
-  "xprv9s21ZrQH143K3fdfzBVQrgiFMr3Y4QDWr5PwXAURN87aC5GWdzhoH3MiQyYUMqm8PnGSwpxfSiToeLgssb5F4iyeMApGFLS6oXogGbwWWiv",
-  true
-));
-
-chain.keyStore.add(new Chain.Xpub(
-  "xpub6BWmELteKsnQRFrvBSmWDicHEy7qomg6eskwHK7U7DjygqqciPux3WreuhN1wsKAAygez1CejaU2phLmPdA9U8JUinTEyVT1XixJAoNPUkz",
-  true
-));
-
 exports.index = function (req, res) {
-  console.log(req.params)
   chain.getBucketAssetBalance(req.params.bucketId, function (err, response) {
     res.setHeader('Content-Type', 'application/json');
     if (err) {
