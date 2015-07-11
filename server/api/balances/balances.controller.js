@@ -28,9 +28,14 @@ chain.keyStore.add(new Chain.Xpub(
 ));
 
 exports.index = function (req, res) {
-  chain.getBucketAssetBalance('aecbc268-2ed2-4143-b69c-da89c1bb9a99', function (err, response) {
+  console.log(req.params)
+  chain.getBucketAssetBalance(req.params.bucketId, function (err, response) {
     res.setHeader('Content-Type', 'application/json');
-    res.json(response);
+    if (err) {
+      res.json(JSON.parse(err.resp.body));
+    } else {
+      res.json(response);
+    }
   });
 };
 
