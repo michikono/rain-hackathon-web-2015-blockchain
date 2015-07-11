@@ -15,8 +15,13 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     padding: 0.2em 0;
 }
 
-.asset-image {
-	width: 50px;
+
+
+.asset-container {
+	text-align: center;
+	.asset-image {
+		width: 300px;
+	}
 }
 
 // Component styles are injected through grunt

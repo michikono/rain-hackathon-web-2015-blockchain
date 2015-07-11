@@ -11,8 +11,14 @@
     <div class="col-lg-12">
       <h1 class="page-header">Books:</h1>
       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="asset in assets">
-        <p><a href="/read">
-        <img class="asset-image" ng-src="{{asset.definition_reference.image_url}}" /> {{asset.definition_reference.name}}</a></p>
+        <li>
+        {{asset.definition_reference.name_short}}
+        <a href="/read">
+          <div class="asset-container">
+            <img class="asset-image" ng-src="{{asset.definition_reference.image_url}}" /> 
+            <p>{{asset.definition_reference.name}}</p>
+          </div>
+        </a></li>
       </ul>
     </div>
   </div>
