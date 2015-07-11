@@ -3,7 +3,7 @@
 angular.module('blockchainedMelodyApp')
   .controller('NavbarCtrl', function ($scope, $location) {
     $scope.menu = [{
-      'title': 'Home',
+      'title': 'Library',
       'link': '/'
     }];
 
