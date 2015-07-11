@@ -12,7 +12,8 @@
       <h1 class="page-header">Books:</h1>
       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="asset in assets">
         <li><a href="/read">
-        <img class="asset-image" src="/images/plenty_book600.jpg" /> {{asset.asset_id}}</a></li>
+        {{asset}}
+        <img class="asset-image" ng-src="{{asset.image_url}}" /> {{asset.asset_id}}</a></li>
       </ul>
     </div>
   </div>
