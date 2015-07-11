@@ -30,7 +30,7 @@ chain.keyStore.add(new Chain.Xpub(
 exports.index = function (req, res) {
   chain.getBucketAssetBalance('aecbc268-2ed2-4143-b69c-da89c1bb9a99', function (err, response) {
     res.setHeader('Content-Type', 'application/json');
-    res.end(response);
+    res.json(response);
   });
 };
 
